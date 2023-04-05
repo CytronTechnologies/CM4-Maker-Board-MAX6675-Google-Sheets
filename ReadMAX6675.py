@@ -47,17 +47,17 @@ class Thermocouple:
 
         GPIO.output(self.cs, GPIO.HIGH)
 
-        if self.unit == 0:
-            self.temp = self.Value
-        if self.unit == 1:
+        if self.unit == 0: # Raw data
+            self.temp = self.Value  
+        if self.unit == 1: # Convert to Celsius
             self.temp = self.Value * 0.23
-        if self.unit == 2:
+        if self.unit == 2: # Convert to Fahrenheit
             self.temp = self.Value * 0.23 * 9.0 / 5.0 + 32.0
 
         if error_tc != 0:
             return -self.cs
         else:
-            return self.temp
+            return round(self.temp, 2)  # return with round 2 decimal places
 
 
 if __name__ == "__main__":
@@ -72,16 +72,16 @@ if __name__ == "__main__":
     so_2 = 24
     
     # max6675.set_pin(CS, SCK, SO, unit) [unit : 0 - raw, 1 - Celsius, 2 - Fahrenheit]
-    thermo1 = Thermocouple(cs_1, sck_1, so_1, 1)
-    thermo2 = Thermocouple(cs_2, sck_2, so_2, 1)
+    thermo_1 = Thermocouple(cs_1, sck_1, so_1, 1)
+    thermo_2 = Thermocouple(cs_2, sck_2, so_2, 1)
     
     try:
         while True:
             # read temperature 
-            t1 = thermo1.read_temp()
-            t2 = thermo2.read_temp()
+            data_thermo_1 = thermo_1.read_temp()
+            data_thermo_2 = thermo_2.read_temp()
             # print temperature
-            print ("Thermocoupler 1: {} , Thermocoupler 2: {}".format(t1,t2))
+            print (f"Thermocoupler 1: {data_thermo_1} , Thermocoupler 2: {data_thermo_2}")
 
             time.sleep(2)
     except KeyboardInterrupt:
