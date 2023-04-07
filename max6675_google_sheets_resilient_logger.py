@@ -1,8 +1,6 @@
-# This code for send the thermocouples data to the Google Spreadsheets with additional feature
-# to avoid data lost during connection error or high traffic server
-# by saving the data in the CSV file before uploading to the Google Spreadsheets and resume upload when connection restored
-# Also using different thread for each read data then save to CSV file and upload to Google Spreadsheets
-# to increase the consistent time interval to read the thermocouple sensor.
+# This code for send the thermocouples data to the Google Spreadsheets with additional feature to avoid data loss during connection errors or high-traffic server
+# It will save the data in the CSV file before uploading to the Google Spreadsheets and resuming upload when the connection is restored
+# Also use different threads for save the data to a CSV file and upload to Google Spreadsheets to increase the consistent time interval to read the thermocouple sensor.
 
 import time
 import csv
