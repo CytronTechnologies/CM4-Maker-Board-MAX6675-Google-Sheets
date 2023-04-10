@@ -59,6 +59,8 @@ For more information on the CM4 Maker Board, check out the datasheet here:
 * [CM4 Maker Board Datasheet](https://docs.google.com/document/d/1XmZSR81IN70pndZ2odBmlZgAufiIBawVdKZ71C7101Y/edit#)  
 
 ## Support  
-If you need further assistance, you can contact us through email support@cytron.io where our team will be happy to assist you.
+You can visit [Log Thermocouple Sensor Data to Google Sheets using CM4 Maker Board](https://cytron.io/tutorial/log-thermocouple-sensor-data-to-google-sheets-using-cm4-maker-board) to learn more about it. 
+
+If you need further assistance, we welcome you to our [technical forum](http://forum.cytron.io) or you can contact us through email support@cytron.io where our team will be happy to assist you. 
 
 Let's start building with CM4 Maker Board!
